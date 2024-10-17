@@ -1,0 +1,12 @@
+
+int FSR;
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+}
+void loop() {
+  FSR = analogRead(A0);
+  float voltage = FSR * (5.0/1023.0);
+  Serial.println(FSR);
+  delay(1000);
+}
