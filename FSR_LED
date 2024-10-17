@@ -1,0 +1,23 @@
+int FSR;
+int LED_PIN = 13;
+
+void setup() {
+  // Initialize serial communication and LED pin
+  Serial.begin(9600);
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop() {
+  FSR = analogRead(A0);
+  float voltage = FSR * (5.0 / 1023.0);
+  Serial.println(FSR);
+  
+  // Check if there's any pressure reading
+  if (FSR > 0) {
+    digitalWrite(LED_PIN, HIGH);  // Turn on the LED
+  } else {
+    digitalWrite(LED_PIN, LOW);   // Turn off the LED
+  }
+  
+  delay(1000);
+}
