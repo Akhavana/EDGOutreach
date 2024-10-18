@@ -2,11 +2,11 @@
 int FSR;
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
+  Serial.begin(9600);   #change this value to 19200, see if the plot shows anything different
 }
 void loop() {
   FSR = analogRead(A0);
   float voltage = FSR * (5.0/1023.0);
   Serial.println(FSR);
-  delay(1000);
+  delay(100);
 }
