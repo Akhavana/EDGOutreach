@@ -1,0 +1,24 @@
+int FSR; 
+int LEDpin = 13; // pin 13 is the built in Arduino LED 
+int threshold = 500; //arbitrary number within FSR range
+ 
+void setup() {
+  Serial.begin(9600);   
+  pinMode(LEDpin, OUTPUT);
+}
+ 
+void loop() {
+  FSR = analogRead(A0); 
+  //Connects FSR to analong pin A0 
+  Serial.print("FSR Analog Value: ");
+  Serial.println(FSR);
+  if (FSR > threshold) {
+    digitalWrite(LEDpin, HIGH);
+    Serial.println("LED: On");
+  } else {
+    digitalWrite(LEDpin, LOW);
+    Serial.println("LED: Off");
+  }
+  
+  delay(100);
+}
