@@ -19,5 +19,5 @@ void loop() {
     digitalWrite(LED_PIN, LOW);   // Turn off the LED
   }
   
-  delay(1000);
+  delay(100);
 }
