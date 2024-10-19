@@ -2,7 +2,7 @@
 int FSR;
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);   #change this value to 19200, see if the plot shows anything different
+  Serial.begin(9600);   //change this value to 19200, see if the plot shows anything different
 }
 void loop() {
   FSR = analogRead(A0);
